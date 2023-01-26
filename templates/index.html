@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block titulo %}
+    Index de projeto
+{% endblock %}
+
+{% block corpo %}
+    {{ frase }}
+    <br>
+    <br>
+    <a href="/produto/">Index Produto absoluto</a>
+    <br>
+    <br>
+    <a href="produto/">Index Produto relativo</a>
+    <br>
+    <br>
+    <a href="{% url 'produto:index' %}">Index Produto tag url</a>
+{% endblock %}
