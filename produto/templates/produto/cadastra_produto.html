@@ -11,4 +11,167 @@
       <h5>Cadastro de Produtos</h5>
       <hr class="mt-0">
    </div>
+
+   <form action="" method="post" class="pb-4">
+
+      <div class="row mb-xl-3">
+
+         <div class="col-xl-6">
+            <div class="row">
+               <label for="id_nome" class="col-xl-2 font-weight-bold">Nome</label>
+               <div class="col-xl-10">
+                  {{ form.nome }}
+
+                  {% if form.nome.erros %}
+                     <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                        {% for error in form.nome.erros %}
+                           <small>{{ error }}</small>
+                        {% endfor %}
+                     </div>
+                  {% endif %}
+
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-6">
+            <div class="row">
+               <label for="id_descricao" class="col-xl-3 font-weight-bold">Descrição</label>
+               <div class="col-xl-9">
+                  {{ form.descricao }}
+
+                  {% if form.descricao.erros %}
+                     <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                        {% for error in form.descricao.erros %}
+                           <small>{{ error }}</small>
+                        {% endfor %}
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="row mb-xl-3">
+         <div class="col-xl-6">
+            <div class="row">
+               <label for="id_categoria" class="col-xl-2 font-weight-bold">Categoria</label>
+               <div class="col-xl-10">
+                  {{ form.categoria }}
+                  {% comment %}
+                     <select name="categoria" required="" id="id_categoria">
+                        <option value="" selected="">----------</option>
+                        <option value="1">Frutas</option>
+                        <option value="2">Legumes</option>
+                        <option value="3">Verduras</option>
+                     </select>
+                  {% endcomment %}
+                  {% if form.categoria.erros %}
+                     <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                        {% for error in form.categoria.erros %}
+                           <small>{{ error }}</small>
+                        {% endfor %}
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-6">
+            <div class="row">
+               <label for="id_data_cadastro" class="col-xl-3 font-weight-bold">Data Cadastro</label>
+               <div class="col-xl-9">
+                  {{ form.data_cadastro }}
+
+                  {% if form.data_cadastro.erros %}
+                     <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                        {% for error in form.data_cadastro.erros %}
+                           <small>{{ error }}</small>
+                        {% endfor %}
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="row mb-xl-3">
+         <div class="col-xl-6">
+            <div class="row">
+               <label for="id_preço" class="col-xl-2 font-weight-bold">Preço</label>
+               <div class="col-xl-10">
+                  {{ form.preco }}
+
+                  {% if form.preco.erros %}
+                     <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                        {% for error in form.preco.erros %}
+                           <small>{{ error }}</small>
+                        {% endfor %}
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-6">
+            <div class="row">
+               <label for="id_qtd_estoque" class="col-xl-3 font-weight-bold">Estoque</label>
+               <div class="col-xl-9">
+                  {{ form.qtd_estoque }}
+
+                  {% if form.qtd_estoque.erros %}
+                     <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                        {% for error in form.qtd_estoque.erros %}
+                           <small>{{ error }}</small>
+                        {% endfor %}
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="row mb-3">
+         <div class="col-xl-6">
+            <div class="row">
+               <label for="id_imagem" class="col-xl-2 font-weight-bold">Imagem</label>
+               <div class="col-xl-10">
+                  {{ from.imagem }}
+
+                  {% if form.imagem.erros %}
+                     <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                        {% for error in form.imagem.erros %}
+                           <small>{{ error }}</small>
+                        {% endfor %}
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-6">
+            <div class="row">
+               <div class="offset-xl-3 col-xl-9">
+                  <div class="form-check pl-0 mt-xl-0 mt-2">
+                     {{ form.disponivel }}
+
+                     <label for="id_disponivel" class="form-check-label">Disponível?</label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="row mb-5">
+         <div class="col-xl-6">
+            <div class="row">
+               <div class="col-xl-10 offset-xl-2">
+                  <button id="botao" type="submit" class="btn btn-success">
+                     <img src="{% static 'images/skin/database_add.png' %}">Cadastrar
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </form>
 {% endblock %}
