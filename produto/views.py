@@ -22,5 +22,12 @@ def lista_produto(request):
 
 
 def cadastra_produto(request):
-    produto_form = ProdutoForm()
+
+    if request.POST:
+        produto_form = ProdutoForm(request.POST)
+        if produto_form.is_valid():
+            pass
+    else:
+        produto_form = ProdutoForm()
+
     return render(request, 'produto/cadastra_produto.html', {'form': produto_form})
